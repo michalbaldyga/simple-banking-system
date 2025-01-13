@@ -38,3 +38,20 @@ class Transaction:
         self.transaction_type = transaction_type
         self.transaction_amount = transaction_amount
         self.transaction_date = datetime.now()
+
+    def __repr__(self):
+        return (
+            f"Transaction("
+            f"client_name='{self.client_name}', "
+            f"transaction_type='{self.transaction_type}', "
+            f"transaction_amount={self.transaction_amount}, "
+            f"transaction_date='{self.transaction_date}')"
+        )
+
+    def __str__(self):
+        return (
+            f"Transaction: "
+            f"Type={self.transaction_type}, "
+            f"Amount=${self.transaction_amount:.2f}, "
+            f"Date={self.transaction_date.strftime('%Y-%m-%d %H:%M:%S')}"
+        )

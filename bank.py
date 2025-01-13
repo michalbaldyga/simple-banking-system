@@ -22,6 +22,9 @@ class Bank:
         """Initializes bank."""
         self.clients = []
 
+    def __repr__(self):
+        return f"Bank(clients={self.clients})"
+
     def get_client(
             self,
             client_id: int

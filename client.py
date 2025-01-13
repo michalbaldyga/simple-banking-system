@@ -47,6 +47,20 @@ class Client:
         self._balance = balance
         self.transactions = []
 
+    def __repr__(self):
+        return (
+            f"Client(client_id={self.client_id}, "
+            f"name='{self.name}', "
+            f"balance={self.balance})"
+        )
+
+    def __str__(self):
+        return (
+            f"Client ID={self.client_id}, "
+            f"Name={self.name}, "
+            f"Balance=${self.balance:.2f}"
+        )
+
     @property
     def balance(self) -> float:
         """Gets the current balance of the client.
