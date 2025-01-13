@@ -1,3 +1,5 @@
+from transaction import Transaction
+
 class Client:
     """
     A class used to represent a Client.
@@ -10,6 +12,7 @@ class Client:
         the name of the client
     _balance : float
         the client's current balance
+    transactions : list[Transaction]
 
     Methods
     -------
@@ -19,6 +22,8 @@ class Client:
         Adds the specified amount to the client's balance.
     withdraw(amount: float) -> None
         Subtracts the specified amount from the client's balance.
+    _register_transaction(transaction_type: str, amount: float) -> None
+        Registers a transaction whenever a deposit or withdrawal is made.
     """
 
     def __init__(
@@ -40,6 +45,7 @@ class Client:
         self.client_id = client_id
         self.name = name
         self._balance = balance
+        self.transactions = []
 
     @property
     def balance(self) -> float:
@@ -71,6 +77,7 @@ class Client:
         if amount <= 0:
             raise ValueError("Deposit amount must be greater than zero.")
         self._balance += amount
+        self._register_transaction("deposit", amount)
 
     def withdraw(
             self,
@@ -95,3 +102,21 @@ class Client:
         if amount > self._balance:
             raise ValueError("Withdrawal amount exceeds available balance.")
         self._balance -= amount
+        self._register_transaction("withdraw", amount)
+
+    def _register_transaction(
+            self,
+            transaction_type: str,
+            amount: float
+    ) -> None:
+        """Registers a transaction whenever a deposit or withdrawal is made.
+
+        Parameters
+        ----------
+        transaction_type : str
+            The type of transaction (withdraw/deposit).
+        amount : float
+            The amount of transaction.
+        """
+        transaction = Transaction(self.name, transaction_type, amount)
+        self.transactions.append(transaction)
