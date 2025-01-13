@@ -90,5 +90,9 @@ class Bank:
             self
     ) -> None:
         """Prints the balance of all bank clients."""
-        for client in self.clients:
-            print(client.balance)
+        if not self.clients:
+            print("There are no bank clients.")
+        else:
+            print("The balance of all bank clients:")
+            for client in self.clients:
+                print(client)
