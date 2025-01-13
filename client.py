@@ -16,7 +16,7 @@ class Client:
 
     Methods
     -------
-    balance()
+    balance() -> float
         Returns the current balance of the client.
     deposit(amount: float) -> None
         Adds the specified amount to the client's balance.
@@ -24,6 +24,8 @@ class Client:
         Subtracts the specified amount from the client's balance.
     _register_transaction(transaction_type: str, amount: float) -> None
         Registers a transaction whenever a deposit or withdrawal is made.
+    print_statement() -> None
+        Prints the statement of the client's transaction history.
     """
 
     def __init__(
@@ -134,3 +136,14 @@ class Client:
         """
         transaction = Transaction(self.name, transaction_type, amount)
         self.transactions.append(transaction)
+
+    def print_statement(
+            self
+    ) -> None:
+        """Prints the statement of the client's transaction history."""
+        if not self.transactions:
+            print(f"{self.name} has no transaction history.")
+        else:
+            print(f"{self.name} transaction history:")
+            for transaction in self.transactions:
+                print(transaction)
