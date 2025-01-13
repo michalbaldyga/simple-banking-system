@@ -4,6 +4,8 @@ class Client:
 
     Attributes
     ----------
+    client_id : int
+        the unique id of the client
     name : str
         the name of the client
     _balance : float
@@ -21,17 +23,21 @@ class Client:
 
     def __init__(
             self,
+            client_id: int,
             name: str,
             balance: float
     ) -> None:
         """
         Parameters
         ----------
+        client_id : int
+            The unique id of the client.
         name : str
             The name of the client.
         balance : float
             The initial balance of the client.
         """
+        self.client_id = client_id
         self.name = name
         self._balance = balance
 
