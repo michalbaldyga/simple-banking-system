@@ -1,4 +1,4 @@
-from transaction import Transaction
+from transaction import Transaction, TransactionType
 
 
 class Client:
@@ -94,7 +94,7 @@ class Client:
         if amount <= 0:
             raise ValueError("Deposit amount must be greater than zero.")
         self._balance += amount
-        self._register_transaction("deposit", amount)
+        self._register_transaction(TransactionType.DEPOSIT, amount)
 
     def withdraw(
             self,
@@ -119,18 +119,18 @@ class Client:
         if amount > self._balance:
             raise ValueError("Withdrawal amount exceeds available balance.")
         self._balance -= amount
-        self._register_transaction("withdraw", amount)
+        self._register_transaction(TransactionType.WITHDRAW, amount)
 
     def _register_transaction(
             self,
-            transaction_type: str,
+            transaction_type: TransactionType,
             amount: float
     ) -> None:
         """Registers a transaction whenever a deposit or withdrawal is made.
 
         Parameters
         ----------
-        transaction_type : str
+        transaction_type : TransactionType
             The type of transaction (withdraw/deposit).
         amount : float
             The amount of transaction.

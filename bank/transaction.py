@@ -1,4 +1,11 @@
 from datetime import datetime
+from enum import Enum
+
+
+class TransactionType(Enum):
+    """Enum representing the types of transactions."""
+    WITHDRAW = "withdraw"
+    DEPOSIT = "deposit"
 
 
 class Transaction:
@@ -9,7 +16,7 @@ class Transaction:
     ----------
     client_name : int
         the name of the client who made the transaction
-    transaction_type : str
+    transaction_type : TransactionType
         the type of transaction (withdraw/deposit)
     transaction_amount : float
         the amount of transaction
@@ -20,7 +27,7 @@ class Transaction:
     def __init__(
             self,
             client_name: str,
-            transaction_type: str,
+            transaction_type: TransactionType,
             transaction_amount: float
     ) -> None:
         """
@@ -30,7 +37,7 @@ class Transaction:
         ----------
         client_name : str
             The name of the client who made the transaction.
-        transaction_type : str
+        transaction_type : TransactionType
             The type of transaction (withdraw/deposit)
         transaction_amount : float
             The amount of the transaction.
