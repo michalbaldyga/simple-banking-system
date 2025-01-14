@@ -1,5 +1,6 @@
 from client import Client
 
+
 class Bank:
     """
     A class used to represent a Bank.

@@ -1,5 +1,6 @@
 from transaction import Transaction
 
+
 class Client:
     """
     A class used to represent a Client.
