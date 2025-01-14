@@ -1,8 +1,8 @@
 from datetime import datetime
-from enum import Enum
+from enum import StrEnum
 
 
-class TransactionType(Enum):
+class TransactionType(StrEnum):
     """Enum representing the types of transactions."""
     WITHDRAW = "withdraw"
     DEPOSIT = "deposit"
