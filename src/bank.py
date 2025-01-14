@@ -10,17 +10,17 @@ class Bank:
     get_client(client_id: int) -> Client
         - Retrieves a client with the specified client ID.
     add_client(client: Client) -> None
-        - Adds a new client to the src.
+        - Adds a new client to the bank.
     remove_client(client_id: int) -> None
-        - Removes a client with the specified client ID from the src.
+        - Removes a client with the specified client ID from the bank.
     print_all_client_balances() -> None
-        - Prints the balance of all src clients.
+        - Prints the balance of all bank clients.
     """
 
     def __init__(
             self
     ) -> None:
-        """Initializes src."""
+        """Initializes bank."""
         self.clients = []
 
     def __repr__(self):
@@ -56,12 +56,12 @@ class Bank:
             self,
             client: Client
     ) -> None:
-        """Adds a new client to the src.
+        """Adds a new client to the bank.
 
         Parameters
         ----------
         client : Client
-            Client object to be added to the src.
+            Client object to be added to the bank.
 
         Raises
         ------
@@ -76,7 +76,7 @@ class Bank:
             self,
             client_id: int
     ) -> None:
-        """Removes a client with the specified client ID from the src.
+        """Removes a client with the specified client ID from the bank.
 
         Parameters
         ----------
@@ -90,10 +90,10 @@ class Bank:
     def print_all_client_balances(
             self
     ) -> None:
-        """Prints the balance of all src clients."""
+        """Prints the balance of all bank clients."""
         if not self.clients:
-            print("There are no src clients.")
+            print("There are no bank clients.")
         else:
-            print("The balance of all src clients:")
+            print("The balance of all bank clients:")
             for client in self.clients:
                 print(client)
