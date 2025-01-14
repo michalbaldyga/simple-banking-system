@@ -1,4 +1,4 @@
-from client import Client
+from src.client import Client
 
 
 class Bank:
@@ -10,17 +10,17 @@ class Bank:
     get_client(client_id: int) -> Client
         - Retrieves a client with the specified client ID.
     add_client(client: Client) -> None
-        - Adds a new client to the bank.
+        - Adds a new client to the src.
     remove_client(client_id: int) -> None
-        - Removes a client with the specified client ID from the bank.
+        - Removes a client with the specified client ID from the src.
     print_all_client_balances() -> None
-        - Prints the balance of all bank clients.
+        - Prints the balance of all src clients.
     """
 
     def __init__(
             self
     ) -> None:
-        """Initializes bank."""
+        """Initializes src."""
         self.clients = []
 
     def __repr__(self):
@@ -56,12 +56,12 @@ class Bank:
             self,
             client: Client
     ) -> None:
-        """Adds a new client to the bank.
+        """Adds a new client to the src.
 
         Parameters
         ----------
         client : Client
-            Client object to be added to the bank.
+            Client object to be added to the src.
 
         Raises
         ------
@@ -76,7 +76,7 @@ class Bank:
             self,
             client_id: int
     ) -> None:
-        """Removes a client with the specified client ID from the bank.
+        """Removes a client with the specified client ID from the src.
 
         Parameters
         ----------
@@ -90,10 +90,10 @@ class Bank:
     def print_all_client_balances(
             self
     ) -> None:
-        """Prints the balance of all bank clients."""
+        """Prints the balance of all src clients."""
         if not self.clients:
-            print("There are no bank clients.")
+            print("There are no src clients.")
         else:
-            print("The balance of all bank clients:")
+            print("The balance of all src clients:")
             for client in self.clients:
                 print(client)

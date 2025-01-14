@@ -1,4 +1,4 @@
-from transaction import Transaction, TransactionType
+from src.transaction import Transaction, TransactionType
 
 
 class Client:

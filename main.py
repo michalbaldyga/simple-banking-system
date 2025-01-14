@@ -1,5 +1,5 @@
-from bank.bank import Bank
-from bank.client import Client
+from src.bank import Bank
+from src.client import Client
 
 def main():
     c1 = Client(1, 'Adam', 100)
