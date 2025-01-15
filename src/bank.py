@@ -24,7 +24,7 @@ class Bank:
         self.clients = []
 
     def __repr__(self):
-        return f"Bank(clients={self.clients})"
+        return r"Bank(clients={})".format(self.clients)
 
     def get_client(
             self,
