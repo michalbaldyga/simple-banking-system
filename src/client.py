@@ -52,16 +52,16 @@ class Client:
 
     def __repr__(self):
         return (
-            r"Client(client_id={}, name='{}', balance={})"
-        ).format(
-            self.client_id, self.name, self.balance
+            f"{self.__class__.__qualname__}(client_id={self.client_id!r}, "
+            f"name={self.name!r}, "
+            f"balance={self.balance!r})"
         )
 
     def __str__(self):
         return (
-            r"Client ID={}, Name={}, Balance=${:.2f}"
-        ).format(
-            self.client_id, self.name, self.balance
+            f"Client ID={self.client_id}, "
+            f"Name={self.name}, "
+            f"Balance=${self.balance:.2f}"
         )
 
     @property

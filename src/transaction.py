@@ -49,11 +49,11 @@ class Transaction:
 
     def __repr__(self):
         return (
-            r"Transaction(client_name='{}', transaction_type='{}', "
-            "transaction_amount={}, transaction_date='{}')"
-        ).format(
-            self.client_name, self.transaction_type,
-            self.transaction_amount, self.transaction_date
+            f"{self.__class__.__qualname__}("
+            f"client_name={self.client_name!r}, "
+            f"transaction_type={self.transaction_type!r}, "
+            f"transaction_amount={self.transaction_amount!r}, "
+            f"transaction_date={self.transaction_date!r})"
         )
 
     def __str__(self):
