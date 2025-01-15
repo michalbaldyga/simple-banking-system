@@ -6,12 +6,19 @@ This project implements a simple Bank Management System with three main classes:
 ## Project Structure
 ```plaintext
 simple-banking-system/
-├── bank/
-│   ├── client.py
+├── diagrams/
+│   ├── erd.drawio
+│   ├── erd.jpg
+├── src/
+│   ├── __init__.py
 │   ├── bank.py
+│   ├── client.py
 │   ├── transaction.py
 ├── tests/
-│   ├── test_client.py
+│   ├── __init__.py
 │   ├── test_bank.py
-│   ├── test_transaction.py
+│   ├── test_client.py
+├── main.py
+├── pyproject.toml
 ├── README.md
+├── requirements.txt
