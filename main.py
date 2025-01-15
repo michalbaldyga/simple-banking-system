@@ -1,6 +1,7 @@
 from src.bank import Bank
 from src.client import Client
 
+
 def main():
     c1 = Client(1, 'Adam', 100)
     c2 = Client(2, 'Mada', 200)
